@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<title>Document</title>
+</head>
+<body>
+
+    <div class="tudo">
+
+        <div class="primeiralinha">
+            <span id="cronometro"></span>
+        </div>
+        
+            
+        <div class="segundalinha">
+            <div class="col-auto form-control">
+            <input type="number" id="valorinput" value="0" min="0" class="form">
+            <input type="button" value="+ 10" id="mais10" class="btn btn-success">
+            <input type="button" value="- 10" id="menos10" class="btn btn-danger">
+            <input type="button" value="Play" id="iniciar" class="btn btn-warning">
+            <input type="button" value="Pause" id="pausar" class="btn btn-warning">
+        </div>
+        </div>
+        
+        
+   
+        <div class="terceiralinha">
+           <fieldset>
+               <legend  style="font-size: 2vh">
+                <table>
+                    <tr>
+                    <td>Lista de Exercícios</td>
+                    <td>
+                        <select name="treino" id="treino">
+                            <option value=1>Treino 1</option>
+                            <option value=2>Treino 2</option>
+                            <option value=3>Treino 3</option>
+                        </select>
+                    </td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="font-size: 1vh" id="novoexerc">Novo</button></td>
+                </legend>
+            </tr>
+                </table>
+                <table id="tabelaexerc" class="table table-sm" style="font-size: 2vh">
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content modal-sm">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Tem Certeza?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" id="apagarsim" class="btn">Sim</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Novo Exercício</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            Nome: <input type="text" class="form form-control" id="altnome">
+                            Treino: <input type="number" id="altidtreino" class="form-control" style="width: 10vh;">
+                            <input type="hidden" id="altidexerc" class="form-control" style="width: 10vh;">
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" id="atualizarexerc" class="btn btn-primary" value="Salvar">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </table>
+        </fieldset> 
+        </div>
+
+        <div class="quartalinha">
+            <form onsubmit="salvar()">                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Novo Exercício</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            Nome: <input type="text" class="form form-control" id="exercnome">
+                            Treino: <input type="number" id="idtreino" class="form-control" style="width: 10vh;">
+                            <script>$("#idtreino").val($("#treino").val());</script>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="salvar">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </form>
+           
+        </div>
+
+    </div>
+    
+    <audio id="player" controls style="display: none;">
+        <source src="1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script2.js"></script>
+</body>
+</html>

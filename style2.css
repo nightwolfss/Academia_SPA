@@ -1,0 +1,173 @@
+.tudo{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    background-color: maroon;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+.primeiralinha{
+    grid-column: 1/6;
+    grid-row: 1/2;
+    width: 98%;
+    
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    
+    font-size: 30vh;
+    background-size: 100vh;
+    background-color: black;
+    color: blanchedalmond;
+    align-content: center;
+    border-radius: 5px;
+    width: 50vh;
+    height: 50vh;
+    display:table;
+
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+	-moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+	box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);    
+
+}
+.primeiralinha #cronometro{
+    text-align: center;
+    vertical-align:middle;
+    display:table-cell;       
+}
+
+.segundalinha{
+    grid-column: 1/4;
+    grid-row: 2/3;
+    margin: auto;
+    margin-top: 2vh;
+
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+	-moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+	box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+}
+
+.terceiralinha{
+    grid-column: 1/4;
+    grid-row: 3/4;
+    margin: auto;
+    margin-top: 2vh;
+    
+    background-color: cornsilk;
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+	-moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+    
+    
+    
+    border-radius: 5px;
+    padding: 10px;
+    display:table;
+
+}
+
+.quartalinha{
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+#valorinput{
+    width: 10vh;
+    height: 5vh;
+    border-radius: 5px;
+    padding-bottom: 5px;
+}
+
+fieldset{
+    border-color: coral;
+}
+
+@media screen and (min-width: 600px) {
+
+    .tudo {
+        display: grid;
+        grid-template-columns: 1fr 12fr 1fr;
+        background-color: maroon;
+        height: 100vh;
+        background-image: linear-gradient(to bottom right, red, blue);
+    }
+
+    .primeiralinha{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        width: 50%;
+        
+        margin-top: 2vh;
+        margin-left: auto;
+        margin-right: auto;
+        
+        font-size: 30vh;
+        background-size: 100vh;
+        background-color: black;
+        color: blanchedalmond;
+        align-content: center;
+        border-radius: 5px;
+       
+        display:table;
+    
+        -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+        -moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+        box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);    
+    
+    }
+    .primeiralinha #cronometro{
+        text-align: center;
+        vertical-align:middle;
+        display:table-cell;       
+    }
+
+    .segundalinha{
+        grid-column: 1/12;
+        grid-row: 2/3;
+        
+        margin-top: 2vh;
+    
+        -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+        -moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+        box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+    }
+    
+    .terceiralinha{
+        grid-column: 1/12;
+        grid-row: 3/4;
+        
+        margin-top: 2vh;
+        
+        background-color: cornsilk;
+        -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+        -moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+        box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+        
+        
+        
+        border-radius: 5px;
+        padding: 10px;
+        display:table;
+    
+    }
+    
+    .terceiralinha td:first-child{
+        font-size: 3vh;
+    }
+
+  
+
+    .quartalinha{
+        grid-column: 2/3;
+        grid-row: 4/5;
+    }
+    
+    #valorinput{
+        width: 10vh;
+        height: 5vh;
+        border-radius: 5px;
+        padding-bottom: 5px;
+        
+    }
+    
+}
